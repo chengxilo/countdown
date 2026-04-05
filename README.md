@@ -12,6 +12,9 @@ name: Countdown
 on:
   schedule:
     - cron: '0 0 * * *'
+  push:
+    paths:
+      - '.github/workflows/countdown.yml'
   workflow_dispatch:
 
 jobs:
