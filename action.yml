@@ -1,11 +1,15 @@
-name: 'Life Countdown'
-description: 'Generate a beautifully themed life countdown SVG for your GitHub profile README'
+name: 'Countdown'
+description: 'Generate a beautifully themed countdown SVG for your GitHub profile README'
 author: 'chengxilo'
 
 inputs:
-  death_date:
-    description: 'Target end-of-life date (YYYY-MM-DD)'
+  date:
+    description: 'Target date to count down to (YYYY-MM-DD)'
     required: true
+  label:
+    description: 'Label displayed below the number (e.g. DAYS TO RETIREMENT)'
+    required: false
+    default: 'DAYS REMAINING'
   theme:
     description: 'Visual theme: default | tokyo-night | react | react-dark | dracula | nord | github-dark'
     required: false
@@ -13,16 +17,17 @@ inputs:
   output_path:
     description: 'Output path for the generated SVG'
     required: false
-    default: 'assets/life-countdown.svg'
+    default: 'assets/countdown.svg'
 
 runs:
   using: 'composite'
   steps:
-    - name: Generate life countdown SVG
+    - name: Generate countdown SVG
       shell: bash
       run: python3 "${{ github.action_path }}/generate.py"
       env:
-        DEATH_DATE:   ${{ inputs.death_date }}
+        TARGET_DATE:  ${{ inputs.date }}
+        LABEL:        ${{ inputs.label }}
         THEME:        ${{ inputs.theme }}
         OUTPUT_PATH:  ${{ inputs.output_path }}
 

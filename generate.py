@@ -3,13 +3,14 @@ import sys
 from datetime import date
 from pathlib import Path
 
-_death_raw = os.getenv("DEATH_DATE")
-if not _death_raw:
-    sys.exit("Error: death_date input is required. Set it in your workflow.")
+_date_raw = os.getenv("TARGET_DATE")
+if not _date_raw:
+    sys.exit("Error: date input is required. Set it in your workflow.")
 
-DEATH_DATE  = date.fromisoformat(_death_raw)
+TARGET_DATE = date.fromisoformat(_date_raw)
+LABEL       = os.getenv("LABEL", "DAYS REMAINING").upper()
 THEME       = os.getenv("THEME", "default")
-OUTPUT_PATH = os.getenv("OUTPUT_PATH", "assets/life-countdown.svg")
+OUTPUT_PATH = os.getenv("OUTPUT_PATH", "assets/countdown.svg")
 
 THEMES = {
     "default": {
@@ -50,7 +51,7 @@ THEMES = {
 }
 
 t = THEMES.get(THEME, THEMES["default"])
-days_remaining = (DEATH_DATE - date.today()).days
+days = (TARGET_DATE - date.today()).days
 
 SVG = f"""\
 <svg width="400" height="80" viewBox="0 0 400 80" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -73,15 +74,15 @@ SVG = f"""\
   <rect fill="{t['bg']}" stroke="{t['border']}" x="1" y="1" width="398" height="78" rx="10" stroke-width="1"/>
 
   <text filter="url(#glow)" fill="url(#g)" x="200" y="42" font-size="36" font-weight="700"
-        text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" letter-spacing="-1">{days_remaining:,}</text>
+        text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" letter-spacing="-1">{days:,}</text>
 
   <line x1="110" y1="54" x2="290" y2="54" stroke="url(#lg)" stroke-width="1"/>
 
   <text fill="{t['label']}" x="200" y="70" font-size="11" text-anchor="middle"
-        font-family="'Segoe UI', system-ui, sans-serif" letter-spacing="2">DAYS REMAINING</text>
+        font-family="'Segoe UI', system-ui, sans-serif" letter-spacing="2">{LABEL}</text>
 </svg>"""
 
 out = Path(OUTPUT_PATH)
 out.parent.mkdir(parents=True, exist_ok=True)
 out.write_text(SVG, encoding="utf-8")
-print(f"Theme: {THEME} | Days remaining: {days_remaining:,} | Output: {OUTPUT_PATH}")
+print(f"Theme: {THEME} | {LABEL}: {days:,} | Output: {OUTPUT_PATH}")

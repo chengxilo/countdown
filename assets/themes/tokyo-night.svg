@@ -1,0 +1,27 @@
+<svg width="400" height="80" viewBox="0 0 400 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7aa2f7"/>
+      <stop offset="100%" stop-color="#bb9af7"/>
+    </linearGradient>
+    <linearGradient id="lg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#7aa2f7" stop-opacity="0"/>
+      <stop offset="50%"  stop-color="#7aa2f7" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#bb9af7"   stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect fill="#1a1b2e" stroke="#414868" x="1" y="1" width="398" height="78" rx="10" stroke-width="1"/>
+
+  <text filter="url(#glow)" fill="url(#g)" x="200" y="42" font-size="36" font-weight="700"
+        text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" letter-spacing="-1">18,625</text>
+
+  <line x1="110" y1="54" x2="290" y2="54" stroke="url(#lg)" stroke-width="1"/>
+
+  <text fill="#565f89" x="200" y="70" font-size="11" text-anchor="middle"
+        font-family="'Segoe UI', system-ui, sans-serif" letter-spacing="2">DAYS REMAINING</text>
+</svg>
