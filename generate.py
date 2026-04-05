@@ -16,37 +16,37 @@ THEMES = {
     "default": {
         "bg": "#0d1117", "border": "#30363d",
         "grad_start": "#4FC3F7", "grad_end": "#FF6B6B",
-        "label": "#8b949e",
+        "label": "#c9d1d9",
     },
     "tokyo-night": {
         "bg": "#1a1b2e", "border": "#414868",
         "grad_start": "#7aa2f7", "grad_end": "#bb9af7",
-        "label": "#565f89",
+        "label": "#a9b1d6",
     },
     "react": {
         "bg": "#20232a", "border": "#282c34",
         "grad_start": "#61dafb", "grad_end": "#21a1c4",
-        "label": "#5c6370",
+        "label": "#abb2bf",
     },
     "react-dark": {
         "bg": "#0d1117", "border": "#20232a",
         "grad_start": "#61dafb", "grad_end": "#0070f3",
-        "label": "#4a5568",
+        "label": "#8892a4",
     },
     "dracula": {
         "bg": "#282a36", "border": "#44475a",
         "grad_start": "#bd93f9", "grad_end": "#ff79c6",
-        "label": "#6272a4",
+        "label": "#ccd0e0",
     },
     "nord": {
         "bg": "#2e3440", "border": "#3b4252",
         "grad_start": "#88c0d0", "grad_end": "#81a1c1",
-        "label": "#4c566a",
+        "label": "#d8dee9",
     },
     "github-dark": {
         "bg": "#161b22", "border": "#30363d",
         "grad_start": "#58a6ff", "grad_end": "#bc8cff",
-        "label": "#8b949e",
+        "label": "#c9d1d9",
     },
 }
 

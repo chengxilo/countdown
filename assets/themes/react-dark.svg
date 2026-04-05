@@ -22,6 +22,6 @@
 
   <line x1="110" y1="54" x2="290" y2="54" stroke="url(#lg)" stroke-width="1"/>
 
-  <text fill="#4a5568" x="200" y="70" font-size="11" text-anchor="middle"
+  <text fill="#8892a4" x="200" y="70" font-size="11" text-anchor="middle"
         font-family="'Segoe UI', system-ui, sans-serif" letter-spacing="2">DAYS REMAINING</text>
 </svg>
