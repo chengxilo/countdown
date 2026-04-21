@@ -1,6 +1,6 @@
 # ⏳ Countdown
 
-A GitHub Action that generates a themed countdown SVG for your GitHub profile README. Count down to anything — retirement, graduation, a trip, or the end of life.
+A GitHub Action that generates a themed countdown SVG for your GitHub profile README. Count down to anything — retirement, graduation, a trip, or the tenth anniversary of your business.
 
 ## Usage
 
